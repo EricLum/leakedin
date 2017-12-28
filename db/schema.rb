@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171227023857) do
+ActiveRecord::Schema.define(version: 20171228232239) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.integer "stalls"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20171227023857) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "ratings", force: :cascade do |t|
