@@ -1,5 +1,5 @@
-<%= @ratings.each do |r| %>
-<h1><%= r.title %></h1>
-<p><%= r.review_date %></p>
+<% @ratings.each do |r| %>
+<h1>Review Title: <%= r.title %></h1>
+<p>Date: <%= r.review_date %>Stars: </p>
 <p><%= r.stars %></p>
 <% end %>

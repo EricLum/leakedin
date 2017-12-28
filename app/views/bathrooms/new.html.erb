@@ -1,0 +1,17 @@
+<h1>Create a new Bathroom</h1>
+<%= form_for @bathroom do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :establishment %>
+<%= f.text_field :establishment %>
+
+<%= f.label :address %>
+<%= f.text_field :address %>
+
+<%= f.label :stalls %>
+<%= f.number_field :stalls %>
+
+<%= f.submit %>
+<% end %>

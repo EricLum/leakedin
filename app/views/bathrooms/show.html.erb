@@ -1,0 +1,10 @@
+<h1><%= @bathroom.title %></h1>
+<h3>Business: <%= @bathroom.establishment %></h3>
+<h3>Address: <%= @bathroom.address %></h3>
+<h3>Number of Stalls: <%= @bathroom.stalls %></h3>
+
+<% @bathroom.ratings.each do |r| %><br>
+<p>Review Title: <%= r.title %></p>
+<p>Date: <%= r.review_date %>Stars: </p>
+<p><%= r.stars %></p>
+<% end %>
