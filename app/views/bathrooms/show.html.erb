@@ -1,6 +1,7 @@
 <h1><%= @bathroom.title %></h1>
 <h3>Business: <%= @bathroom.establishment %></h3>
 <h3>Address: <%= @bathroom.address %></h3>
+<%= image_tag google_maps(@bathroom.latitude, @bathroom.longitude) %>
 <h3>Number of Stalls: <%= @bathroom.stalls %></h3>
 <%= link_to 'Add a Rating', new_bathroom_rating_path(@bathroom) %>
 
