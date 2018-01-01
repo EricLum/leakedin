@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get '/' , to: 'users#create', as: 'root'
+  get '/signup', to: 'users#new', as 'signup'
+  get '/signin', to: 'sessions#new'
+  post '/sessions' to: 'sessions#create'
+  delete '/sessions' to: 'sessions#destroy'
+  
   resources :users
   resources :bathrooms do
     resources :ratings
