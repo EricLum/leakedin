@@ -9,6 +9,7 @@ class BathroomsController < ApplicationController
     if @bathroom.save
       redirect_to bathroom_path(@bathroom)
     else
+      flash[:error] = @bathroom.errors.full_messages
       redirect_to new_bathroom_path
     end
   end
