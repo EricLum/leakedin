@@ -6,4 +6,12 @@ class Bathroom < ApplicationRecord
   validates :title, length: {in: 1..50}
   validates :establishment, presence: true
   validates :address, presence: true
+
+  def average_rating
+    if self.ratings
+      self.ratings.collect{|br| br.stars}.inject{|sum,el|sum + el}.to_f/self.ratings.size
+    else
+      'Not enough ratings'
+    end
+  end
 end
