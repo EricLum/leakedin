@@ -1,4 +1,6 @@
 <h1>Bathrooms Listing</h1>
+<h4><%= link_to 'Create a Bathroom', new_bathroom_path %>
+</h4>
 <% @bathrooms.each do |b| %>
 <label><%= link_to b.establishment, b %></label>
 <ul>

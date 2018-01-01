@@ -30,11 +30,10 @@ class RatingsController < ApplicationController
   end
 
   def update
-    byebug
     @rating = Rating.find(params[:id])
     @rating.update(rating_params)
     if @rating.save
-      redirect_to bathroom_path(@rating.b athroom)
+      redirect_to bathroom_path(@rating.bathroom)
     else
       flash[:error] = @rating.errors.full_messages
       redirect_to edit_bathroom_rating_path(@bathroom, @rating)

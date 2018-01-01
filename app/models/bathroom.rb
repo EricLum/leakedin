@@ -14,4 +14,12 @@ class Bathroom < ApplicationRecord
       'Not enough ratings'
     end
   end
+
+  def number_of_reviews
+    if self.ratings
+      self.ratings.count
+    else
+      0
+    end
+  end
 end

@@ -1,0 +1,28 @@
+
+<% if flash[:error] %>
+<label>Your bathroom could not be submitted due to the following: </label>
+<% flash[:error].each do |err| %>
+<ul>
+  <li><%= err %></li>
+</ul>
+<% end %>
+<% end %>
+<%= form_for @bathroom do |f| %>
+<div>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</div>
+<div>
+<%= f.label :establishment %>
+<%= f.text_field :establishment %>
+</div>
+<div>
+<%= f.label :address %>
+<%= f.text_field :address %>
+</div>
+<div>
+<%= f.label :stalls %>
+<%= f.number_field :stalls %>
+</div>
+<%= f.submit %>
+<% end %>

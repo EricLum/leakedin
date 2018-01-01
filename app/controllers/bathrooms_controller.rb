@@ -29,6 +29,12 @@ class BathroomsController < ApplicationController
   def update
     @bathroom = Bathroom.find(params[:id])
     @bathroom.update(bathroom_params)
+    if @bathroom.save
+      redirect_to bathroom_path(@bathroom)
+    else
+      flash[:error] = @bathroom.errors.full_messages
+      redirect_to edit_bathroom_path(@bathroom)
+    end
   end
 
   def delete
