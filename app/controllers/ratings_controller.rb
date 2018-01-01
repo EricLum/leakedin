@@ -18,6 +18,7 @@ class RatingsController < ApplicationController
 
   def edit
     @rating = Rating.find(params[:id])
+    @bathroom = @rating.bathroom
   end
 
   def show
@@ -29,13 +30,22 @@ class RatingsController < ApplicationController
   end
 
   def update
+    byebug
     @rating = Rating.find(params[:id])
     @rating.update(rating_params)
+    if @rating.save
+      redirect_to bathroom_path(@rating.b athroom)
+    else
+      flash[:error] = @rating.errors.full_messages
+      redirect_to edit_bathroom_rating_path(@bathroom, @rating)
+    end
   end
 
-  def delete
+  def destroy
     @rating = Rating.find(params[:id])
+    @bathroom = @rating.bathroom
     @rating.destroy
+    redirect_to @bathroom
   end
 
   private

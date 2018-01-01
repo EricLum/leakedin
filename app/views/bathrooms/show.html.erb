@@ -9,6 +9,10 @@
 
 <% @bathroom.ratings.each do |r| %><br>
 <p>Review Title: <%= r.title %></p>
+<!-- be sure to add both required parameters for the route -->
+<p><%= link_to 'Edit Review', edit_bathroom_rating_path(@bathroom,r) %></p>
+<p><%= link_to 'Delete Review', bathroom_rating_path(@bathroom,r), method: :delete %></p>
+<p>Description: <%= r.description %></p>
 <p>Date: <%= r.review_date %>Stars: </p>
 <p><%= r.stars %></p>
 <% end %>

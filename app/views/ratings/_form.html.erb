@@ -1,0 +1,20 @@
+<%= form_for [@bathroom,@rating] do |f| %>
+<%= f.hidden_field :bathroom_id, :value => @bathroom.id %>
+<div>
+  <%= f.label :review_date %>
+  <%= f.date_field :review_date %>
+</div>
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<div>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+<div>
+  <%= f.label :stars %>
+  <%= f.number_field :stars %>
+</div>
+<%= f.submit %>
+<% end %>
