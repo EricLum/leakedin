@@ -1,0 +1,8 @@
+<h1>Bathrooms List</h1>
+<% @bathrooms.each do |b| %>
+<label><%= link_to b.establishment, b %></label>
+<ul>
+  <li>Title: <%= b.title %></li>
+  <li>Address: <%= b.address%></li>
+</ul>
+<% end %>
