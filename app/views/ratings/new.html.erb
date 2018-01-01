@@ -1,4 +1,12 @@
 <h1>Create a review for: <%= @bathroom.title %></h1>
+<% if flash[:error] %>
+<label>Your rating could not be submitted due to the following: </label>
+<% flash[:error].each do |err| %>
+<ul>
+  <li><%= err %></li>
+</ul>
+<% end %>
+<% end %>
 <%= form_for [@bathroom,@rating] do |f| %>
 <%= f.hidden_field :bathroom_id, :value => @bathroom.id %>
 <%= f.label :review_date %>

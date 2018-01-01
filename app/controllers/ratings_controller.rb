@@ -11,7 +11,8 @@ class RatingsController < ApplicationController
       @bathroom = Bathroom.find(@rating.bathroom.id)
       redirect_to bathroom_path(@bathroom)
     else
-      redirect_to new_rating_path
+      flash[:error] = @rating.errors.full_messages
+      redirect_to new_bathroom_rating_path
     end
   end
 
