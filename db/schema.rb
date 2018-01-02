@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180101231801) do
+ActiveRecord::Schema.define(version: 20180102022952) do
 
   create_table "bathrooms", force: :cascade do |t|
     t.integer "stalls"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180101231801) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "email"
+    t.string "password_digest"
   end
 
 end
