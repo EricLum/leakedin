@@ -37,9 +37,10 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @bathroom = Bathroom.find(params[:id])
     @bathroom.destroy
+    redirect_to bathrooms_path
   end
 
   private
